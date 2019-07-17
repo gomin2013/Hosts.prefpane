@@ -39,8 +39,14 @@ void NLPERMANENTMARKERSHOSTSonHostsParseError(NLPERMANENTMARKERSHOSTS_CHostEntry
                                                              @"error: description");
     NSString *errorString = [NSString stringWithFormat:errorFormatString, error->linenumber, error->token, error->error];
     
-    NSInteger choice = NSRunAlertPanel(windowTitle, errorString, @"No", nil, @"Yes");
-    if (choice == NSAlertDefaultReturn) {
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = windowTitle;
+    alert.informativeText = [NSString stringWithFormat:@"%@", errorString];
+    [alert addButtonWithTitle:@"No"];
+    [alert addButtonWithTitle:@"Yes"];
+    NSModalResponse choice = [alert runModal];
+    
+    if (choice == NSAlertFirstButtonReturn) {
         [[NSApplication sharedApplication] terminate:nil];
     }
 }

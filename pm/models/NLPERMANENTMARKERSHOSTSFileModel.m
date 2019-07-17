@@ -183,7 +183,7 @@ NSMutableArray * NLPERMANENTMARKERSHOSTShostsEntries;
     NSData * stored_items_data = [[NSUserDefaults standardUserDefaults] objectForKey:PMHOSTS_DEFAULTS_KEY];
     NSMutableArray * stored_items = [NSKeyedUnarchiver unarchiveObjectWithData:stored_items_data];
     [stored_items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if ([[obj use] integerValue] == NSOffState) {
+        if ([[obj use] integerValue] == NSControlStateValueOff) {
             @try {
                 [NLPERMANENTMARKERSHOSTShostsEntries insertObject:obj atIndex:idx];
             }

@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>icon.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>nl.permanentmarkers.hosts</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -29,7 +29,7 @@
 	<key>NSMainNibFile</key>
 	<string>HostsPrefpane</string>
 	<key>NSPrefPaneIconFile</key>
-	<string>32x32.tiff</string>
+	<string>HostsPrefpane-icon.tiff</string>
 	<key>NSPrefPaneIconLabel</key>
 	<string>Hosts</string>
 	<key>NSPrincipalClass</key>

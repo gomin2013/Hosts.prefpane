@@ -25,7 +25,7 @@
 
 - (id) init {
 	[super init];
-	use = [NSNumber numberWithInteger:NSOnState];
+    use = [NSNumber numberWithInteger:NSControlStateValueOn];
 	address = nil;
 	hostnames = nil;
 	comment = nil;
@@ -33,7 +33,7 @@
 }
 
 - (id) initWithCHostEntry:(NLPERMANENTMARKERSHOSTS_CHostEntry *) entry {
-	use = [NSNumber numberWithInteger:NSOnState];
+    use = [NSNumber numberWithInteger:NSControlStateValueOn];
 	address = [NSString alloc];
 	hostnames = [NSString alloc];
 	comment = [NSString alloc];
@@ -192,7 +192,7 @@
 }
 
 - (void)writeToFileHandle:(NSFileHandle *)handle {
-    if ([use integerValue] == NSOnState) {
+    if ([use integerValue] == NSControlStateValueOn) {
         NSString *line = [self toString];
         [handle writeData:[line dataUsingEncoding:NSUTF8StringEncoding]];
     }
